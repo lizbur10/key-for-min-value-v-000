@@ -4,16 +4,19 @@
 def key_for_min_value(name_hash)
   min_value = 0
   return_val = ""
-  if name_hash.empty? ? return nil :
-  name_hash.each do | key, value |
-    if min_value == 0 || value < min_value
-      min_value = value
+  if !name_hash.empty?
+    name_hash.each do | key, value |
+      if min_value == 0 || value < min_value
+        min_value = value
+      end
     end
-  end
-  name_hash.each do | key, value |
-    if value == min_value
-      return_val = key
+    name_hash.each do | key, value |
+      if value == min_value
+        return_val = key
+      end
     end
+    return_val
+  else
+    return nil
   end
-  return_val
 end
